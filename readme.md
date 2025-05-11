@@ -8,7 +8,7 @@ Simply access your environment variables.
 go get -u github.com/sultaniman/env
 ```
 
-> [!NOTE] 
+> [!NOTE]
 > `env` is case sensitive so `Var_Name` and `var_name` are not the same.
 
 ## Examples
@@ -22,6 +22,8 @@ import "github.com/sultaniman/env"
 ```go
 port := env.GetInt("PORT")
 port, err := env.GetIntE("PORT")
+
+host := env.GetString("HOST")
 ```
 
 ### With environment prefix

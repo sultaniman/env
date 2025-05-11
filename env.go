@@ -8,6 +8,11 @@ func SetEnvPrefix(prefix string) {
 	envPrefix = prefix
 }
 
+// GetString tries to retrieve string value from environment.
+func GetString(name string) string {
+	return getEnv(name)
+}
+
 // GetInt tries to retrieve and parse int value
 // uses `strconv.ParseInt` function, ignores error.
 func GetInt(name string) int {
