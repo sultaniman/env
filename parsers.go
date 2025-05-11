@@ -1,6 +1,9 @@
 package env
 
-import "strconv"
+import (
+	"os"
+	"strconv"
+)
 
 func asInt(v string) (int, error) {
 	i, err := strconv.ParseInt(v, 10, getIntBits())
@@ -62,4 +65,12 @@ func asFloat64(v string) (float64, error) {
 
 func getIntBits() int {
 	return 32 << (^uint(0) >> 63)
+}
+
+func getEnv(name string) string {
+	if envPrefix != "" {
+		return os.Getenv(envPrefix + name)
+	}
+
+	return os.Getenv(name)
 }

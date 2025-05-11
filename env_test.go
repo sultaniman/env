@@ -101,3 +101,10 @@ func TestGetBool(t *testing.T) {
 	randomBool := GetBool("random")
 	assert.Equal(t, false, randomBool)
 }
+
+func TestGetWithPrefix(t *testing.T) {
+	SetEnvPrefix("PREFIX_")
+	t.Setenv("PREFIX_"+firstVar, "123")
+	firstInt := GetInt(firstVar)
+	assert.Equal(t, 123, firstInt)
+}
