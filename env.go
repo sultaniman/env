@@ -169,3 +169,9 @@ func GetFloat32E(name string) (float32, error) {
 func GetFloat64E(name string) (float64, error) {
 	return asFloat64(os.Getenv(name))
 }
+
+// GetBoolE tries to retrieve and parse bool value
+// returns the result of `strconv.ParseBool`.
+func GetBoolE(name string) (bool, error) {
+	return strconv.ParseBool(os.Getenv(name))
+}
