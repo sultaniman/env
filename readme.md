@@ -1,3 +1,5 @@
+[![Go](https://github.com/sultaniman/env/actions/workflows/go.yml/badge.svg)](https://github.com/sultaniman/env/actions/workflows/go.yml)
+
 # Env
 
 Simply access your environment variables.
@@ -10,12 +12,12 @@ go get -u github.com/sultaniman/env
 
 ## Examples
 
-> [!NOTE]
-> `env` is case sensitive so `Var_Name` and `var_name` are not the same.
-
 ```go
 import "github.com/sultaniman/env"
 ```
+
+> [!NOTE]
+> `env` is case sensitive so `Var_Name` and `var_name` are not the same.
 
 ### Direct access
 
