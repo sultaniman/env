@@ -4,6 +4,7 @@ import "strconv"
 
 var envPrefix string = ""
 
+// SetEnvPrefix sets common env variable prefix.
 func SetEnvPrefix(prefix string) {
 	envPrefix = prefix
 }
