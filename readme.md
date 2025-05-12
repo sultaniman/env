@@ -4,6 +4,10 @@
 
 Simply access your environment variables.
 
+> [!NOTE]
+> I needed a simple and typed access to environment variables
+> but all existing solutions did too much.
+
 ## 💾 Installation
 
 ```sh
