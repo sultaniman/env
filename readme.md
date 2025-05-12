@@ -8,10 +8,10 @@ Simply access your environment variables.
 go get -u github.com/sultaniman/env
 ```
 
+## Examples
+
 > [!NOTE]
 > `env` is case sensitive so `Var_Name` and `var_name` are not the same.
-
-## Examples
 
 ```go
 import "github.com/sultaniman/env"
