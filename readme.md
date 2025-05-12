@@ -4,13 +4,13 @@
 
 Simply access your environment variables.
 
-## Installation
+## 💾 Installation
 
 ```sh
 go get -u github.com/sultaniman/env
 ```
 
-## Examples
+## 📕 Examples
 
 ```go
 import "github.com/sultaniman/env"
@@ -19,7 +19,7 @@ import "github.com/sultaniman/env"
 > [!NOTE]
 > `env` is case sensitive so `Var_Name` and `var_name` are not the same.
 
-### Direct access
+### 🤏 Direct access
 
 ```go
 port := env.GetInt("PORT")
@@ -28,9 +28,11 @@ port, err := env.GetIntE("PORT")
 host := env.GetString("HOST")
 ```
 
-### With environment prefix
+### 🔖 With environment prefix
 
 ```go
 env.SetEnvPrefix("PREFIX_")
 port := env.GetInt("PORT")
 ```
+
+<p align="center">✨ 🚀 ✨</p>

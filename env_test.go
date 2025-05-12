@@ -34,6 +34,12 @@ func assertError(t *testing.T, err error) {
 	}
 }
 
+func TestGetString(t *testing.T) {
+	t.Setenv(firstVar, "rainbows")
+	someStr := GetString(firstVar)
+	assertEqual(t, "rainbows", someStr)
+}
+
 func TestGetInt(t *testing.T) {
 	t.Setenv(firstVar, "1")
 	t.Setenv(secondVar, "1")
@@ -58,6 +64,39 @@ func TestGetInt(t *testing.T) {
 
 	someInt64 := GetInt64(firstVar)
 	assertEqual(t, int64(1), someInt64)
+}
+
+func TestGetIntE(t *testing.T) {
+	t.Setenv(firstVar, "abcd")
+	t.Setenv(secondVar, "0x123")
+
+	someInt, err := GetIntE(firstVar)
+	assertError(t, err)
+	assertEqual(t, 0, someInt)
+
+	otherInt, err := GetIntE(secondVar)
+	assertError(t, err)
+	assertEqual(t, 0, otherInt)
+
+	randomInt, err := GetIntE("OTHER_INTS")
+	assertError(t, err)
+	assertEqual(t, 0, randomInt)
+
+	someInt8, err := GetInt8E(firstVar)
+	assertError(t, err)
+	assertEqual(t, int8(0), someInt8)
+
+	someInt16, err := GetInt16E(firstVar)
+	assertError(t, err)
+	assertEqual(t, int16(0), someInt16)
+
+	someInt32, err := GetInt32E(firstVar)
+	assertError(t, err)
+	assertEqual(t, int32(0), someInt32)
+
+	someInt64, err := GetInt64E(firstVar)
+	assertError(t, err)
+	assertEqual(t, int64(0), someInt64)
 }
 
 func TestGetUInt(t *testing.T) {
@@ -86,6 +125,39 @@ func TestGetUInt(t *testing.T) {
 	assertEqual(t, uint64(111), someInt64)
 }
 
+func TestGetUIntE(t *testing.T) {
+	t.Setenv(firstVar, "111.0")
+	t.Setenv(secondVar, "ooo")
+
+	someUInt, err := GetUIntE(firstVar)
+	assertError(t, err)
+	assertEqual(t, uint(0), someUInt)
+
+	otherUInt, err := GetUIntE(secondVar)
+	assertError(t, err)
+	assertEqual(t, uint(0), otherUInt)
+
+	randomInt, err := GetUIntE("OTHER_INTS")
+	assertError(t, err)
+	assertEqual(t, uint(0), randomInt)
+
+	someInt8, err := GetUInt8E(firstVar)
+	assertError(t, err)
+	assertEqual(t, uint8(0), someInt8)
+
+	someInt16, err := GetUInt16E(firstVar)
+	assertError(t, err)
+	assertEqual(t, uint16(0), someInt16)
+
+	someInt32, err := GetUInt32E(firstVar)
+	assertError(t, err)
+	assertEqual(t, uint32(0), someInt32)
+
+	someInt64, err := GetUInt64E(firstVar)
+	assertError(t, err)
+	assertEqual(t, uint64(0), someInt64)
+}
+
 func TestGetFloat(t *testing.T) {
 	t.Setenv(firstVar, "111.001")
 	t.Setenv(secondVar, "101.0012")
@@ -101,6 +173,23 @@ func TestGetFloat(t *testing.T) {
 
 	randomFloat64 := GetFloat64("RANDOM_FLOAT")
 	assertEqual(t, float64(0.0), randomFloat64)
+}
+
+func TestGetFloatE(t *testing.T) {
+	t.Setenv(firstVar, "111,001")
+	t.Setenv(secondVar, "-")
+
+	someFloat32, err := GetFloat32E(firstVar)
+	assertError(t, err)
+	assertEqual(t, float32(0.0), someFloat32)
+
+	otherFloat64, err := GetFloat64E(secondVar)
+	assertError(t, err)
+	assertEqual(t, float64(0.0), otherFloat64)
+
+	randomFloat32, err := GetFloat32E("RANDOM_FLOAT")
+	assertError(t, err)
+	assertEqual(t, float32(0.0), randomFloat32)
 }
 
 func TestGetBool(t *testing.T) {
