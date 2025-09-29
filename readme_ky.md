@@ -2,28 +2,29 @@
 
 # Env
 
-Simply access your environment variables.
+Ajlana çöjrödögü özgörmölörgö cönököj kirüü.
 
 > [!NOTE]
-> I needed a simple and typed access to environment variables
-> but all existing solutions did too much.
+> Mağa ajlana çöjrö özgörmölörünö cönököj, tipteştirilgen kirüü kerek boldu,
+> biraq bar čeçimder aşıqça köp iş atqarat.
 
-## 💾 Installation
+## 💾 Ornotuu
 
 ```sh
 go get -u github.com/sultaniman/env
 ```
 
-## 📕 Examples
+## 📕 Mysaldar
 
 ```go
 import "github.com/sultaniman/env"
 ```
 
 > [!NOTE]
-> `env` is case sensitive so `Var_Name` and `var_name` are not the same.
+> `env` çoñ jana kiçi tamğalardy acyratıp qarajt, demek `Var_Name` menen `var_name`
+> birdej emes.
 
-### 🤏 Direct access
+### 🤏 Tüzdön-tüz kirüü
 
 ```go
 port := env.GetInt("PORT")
@@ -32,7 +33,7 @@ port, err := env.GetIntE("PORT")
 host := env.GetString("HOST")
 ```
 
-### 🔖 With environment prefix
+### 🔖 Ajlana prefiksi menen
 
 ```go
 env.SetEnvPrefix("PREFIX_")
@@ -40,9 +41,3 @@ port := env.GetInt("PORT")
 ```
 
 <p align="center">✨ 🚀 ✨</p>
-
-## 🌐 Translations
-
-- [Deutsch README](readme_de.md)
-- [Türkçe README](readme_tr.md)
-- [Qyrgyz README](readme_ky.md)

@@ -2,11 +2,11 @@
 
 # Env
 
-Simply access your environment variables.
+Greife einfach auf deine Umgebungsvariablen zu.
 
 > [!NOTE]
-> I needed a simple and typed access to environment variables
-> but all existing solutions did too much.
+> Ich brauchte einen einfachen und typisierten Zugriff auf Umgebungsvariablen,
+> aber alle bestehenden Lösungen machten zu viel.
 
 ## 💾 Installation
 
@@ -14,16 +14,17 @@ Simply access your environment variables.
 go get -u github.com/sultaniman/env
 ```
 
-## 📕 Examples
+## 📕 Beispiele
 
 ```go
 import "github.com/sultaniman/env"
 ```
 
 > [!NOTE]
-> `env` is case sensitive so `Var_Name` and `var_name` are not the same.
+> `env` unterscheidet zwischen Groß- und Kleinschreibung, daher sind `Var_Name`
+> und `var_name` nicht identisch.
 
-### 🤏 Direct access
+### 🤏 Direkter Zugriff
 
 ```go
 port := env.GetInt("PORT")
@@ -32,7 +33,7 @@ port, err := env.GetIntE("PORT")
 host := env.GetString("HOST")
 ```
 
-### 🔖 With environment prefix
+### 🔖 Mit Umgebungspräfix
 
 ```go
 env.SetEnvPrefix("PREFIX_")
@@ -40,9 +41,3 @@ port := env.GetInt("PORT")
 ```
 
 <p align="center">✨ 🚀 ✨</p>
-
-## 🌐 Translations
-
-- [Deutsch README](readme_de.md)
-- [Türkçe README](readme_tr.md)
-- [Qyrgyz README](readme_ky.md)

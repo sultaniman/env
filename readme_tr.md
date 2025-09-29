@@ -2,28 +2,29 @@
 
 # Env
 
-Simply access your environment variables.
+Ortam değişkenlerinize kolayca erişin.
 
 > [!NOTE]
-> I needed a simple and typed access to environment variables
-> but all existing solutions did too much.
+> Ortam değişkenlerine basit ve tipli erişime ihtiyacım vardı,
+> ancak mevcut çözümlerin hepsi çok fazla şey yapıyordu.
 
-## 💾 Installation
+## 💾 Kurulum
 
 ```sh
 go get -u github.com/sultaniman/env
 ```
 
-## 📕 Examples
+## 📕 Örnekler
 
 ```go
 import "github.com/sultaniman/env"
 ```
 
 > [!NOTE]
-> `env` is case sensitive so `Var_Name` and `var_name` are not the same.
+> `env` büyük/küçük harfe duyarlıdır, bu yüzden `Var_Name` ile `var_name`
+> aynı değildir.
 
-### 🤏 Direct access
+### 🤏 Doğrudan erişim
 
 ```go
 port := env.GetInt("PORT")
@@ -32,7 +33,7 @@ port, err := env.GetIntE("PORT")
 host := env.GetString("HOST")
 ```
 
-### 🔖 With environment prefix
+### 🔖 Ortam öneki ile
 
 ```go
 env.SetEnvPrefix("PREFIX_")
@@ -40,9 +41,3 @@ port := env.GetInt("PORT")
 ```
 
 <p align="center">✨ 🚀 ✨</p>
-
-## 🌐 Translations
-
-- [Deutsch README](readme_de.md)
-- [Türkçe README](readme_tr.md)
-- [Qyrgyz README](readme_ky.md)
