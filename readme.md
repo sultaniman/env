@@ -40,3 +40,9 @@ port := env.GetInt("PORT")
 ```
 
 <p align="center">✨ 🚀 ✨</p>
+
+## 🌐 Translations
+
+- [Deutsch README](readme_de.md)
+- [Türkçe README](readme_tr.md)
+- [Qyrgyz README](readme_ky.md)
